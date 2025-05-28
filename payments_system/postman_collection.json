@@ -1,0 +1,44 @@
+{
+  "info": {
+    "name": "Payments System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Вебхук от банка",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/webhook/bank/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "webhook", "bank", ""]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"operation_id\": \"ccf0a86d-041b-4991-bcf7-e2352f7b8a4a\",\n  \"amount\": 145000,\n  \"payer_inn\": \"1234567890\",\n  \"document_number\": \"PAY-328\",\n  \"document_date\": \"2024-04-27T21:00:00Z\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Получение баланса",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/organizations/1234567890/balance/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "organizations", "1234567890", "balance", ""]
+        }
+      }
+    }
+  ]
+} 
